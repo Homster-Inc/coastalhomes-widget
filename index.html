@@ -43,7 +43,7 @@
           <pre><code>&lt;script src="https://app.homster.xyz/js/coastalhomes/index.js"&gt;&lt;/script&gt;</code></pre>
           <button class="btn" id="copyBtn">Kodu Kopyala</button>
         </div>
-        <p class="muted"><strongÖneri:</strong> Kodu <code>&lt;/body&gt;</code> kapanış etiketinden hemen önce ekleyin.</p>
+        <p class="muted"><strong>Öneri:</strong> Kodu <code>&lt;/body&gt;</code> kapanış etiketinden hemen önce ekleyin.</p>
         <p class="ok">Hepsi bu kadar ✅</p>
       </section>
 
@@ -57,12 +57,23 @@
         </ul>
       </section>
 
+      <!-- 2.5) İlk Hafta: Yapılandırma (Configuration Mode) -->
+      <section class="card">
+        <h3>3) İlk Hafta: Yapılandırma (Configuration Mode)</h3>
+        <ul>
+          <li><strong>Yalnızca ayar/kalibrasyon:</strong> İlk 1 hafta boyunca widget, <em>AI Assistant</em>’ı <strong>ayarlamak</strong> ve sitenizin kullanıcı ihtiyaçlarını <strong>anlamak</strong> için çalışacaktır.</li>
+          <li><strong>Son kullanıcıya yardım yok:</strong> Bu aşamada Assistant, ziyaretçilere yanıt vermez; canlı destek/sohbet sunulmaz.</li>
+          <li><strong>Kademeli açılış:</strong> Widget görünürlüğü ve kapsamı <strong>gün gün</strong> genişletilir. Testler tamamlanınca Assistant aktif hâle getirilir.</li>
+          <li><strong>Veri yaklaşımı:</strong> URL, sayfada kalma süresi ve kaydırma yüzdesi gibi <em>anonim</em> sinyallerle iş akışları ayarlanır. Kişisel veriler (<em>PII</em>) yalnızca kullanıcı paylaşırsa ve amaçla sınırlı olarak kullanılır.</li>
+        </ul>
+      </section>
+
       <!-- 3) Üst düzey açıklama + diyagram -->
       <section class="card">
-        <h3>3) Nasıl Çalışır? </h3>
+        <h3>4) Nasıl Çalışır? (Üst Düzey)</h3>
         <p>
           Kod tek satırda yüklenir ve sayfaya tek bir <strong>widget</strong> ekler. Sadece gerektiğinde,
-          arka plana hafif bir istek atıp (<em>decision API</em>) hangi küçük arayüzün gösterileceğine karar verir:
+          arka plana hafif bir istek atıp (<em>Decision API</em>) hangi küçük arayüzün gösterileceğine karar verir:
           buton, bildirim veya bir <strong>iframe</strong> içindeki canlı önizleme penceresi.
         </p>
         <ul>
@@ -120,9 +131,31 @@
         </div>
       </section>
 
-      <!-- 4) Destek -->
+      <!-- 5) Teknik olmayan PM için basit örnek HTML -->
       <section class="card">
-        <h3>4) Destek</h3>
+        <h3>5) Teknik Olmayan PM İçin: En Basit Örnek</h3>
+        <p>Aşağıdaki sayfa örneğinde, <code>&lt;/body&gt;</code> kapanışından hemen önce tek satırı ekledik.</p>
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang="tr"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Örnek Sayfa&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Merhaba Dünya&lt;/h1&gt;
+  &lt;p&gt;Bu sayfaya Coastal Homes Widget'ı ekleyeceğiz.&lt;/p&gt;
+
+  &lt;!-- 1) Bu satırı, &lt;/body&gt; etiketinden hemen önce ekleyin --&gt;
+  &lt;script src="https://app.homster.xyz/js/coastalhomes/index.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </section>
+
+      <!-- 6) Destek -->
+      <section class="card">
+        <h3>6) Destek</h3>
         <p>📧 arda@homster.com &nbsp;·&nbsp; ☎️ +90 532 711 22 90</p>
       </section>
     </div>
@@ -133,7 +166,7 @@
   </footer>
 
   <script>
-    // "Kodu Kopyala" butonu, async'siz snippet'i kopyalar
+    // "Kodu Kopyala" butonu, senkron snippet'i kopyalar
     document.getElementById('copyBtn')?.addEventListener('click', () => {
       const txt = '<script src="https://app.homster.xyz/js/coastalhomes/index.js"><\/script>';
       navigator.clipboard.writeText(txt).then(()=>alert('Kod kopyalandı!'));
